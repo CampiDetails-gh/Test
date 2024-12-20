@@ -3,160 +3,271 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Campi - Electrical Appliances</title>
+  <meta name="description" content="Browse our electrical appliances catalog with high-quality products for Room Use.">
+  <meta name="author" content="Campi.gh">
+  <title>Electrical Appliances Catalog</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
-    /* Your existing styles here, or the provided ones for styling */
+    /* General Reset and Body Styling */
     body {
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
     }
-    .navbar {
-      background-color: #333;
-      padding: 10px;
-      text-align: center;
+    h1, h2, p {
+      margin: 0;
+      padding: 0;
     }
-    .navbar a {
-      color: white;
-      margin: 0 15px;
+    a {
       text-decoration: none;
+      color: #333;
     }
+ 
+/* Banner and Navigation */
+    /* Banner */
     .banner {
-      background: url('your-banner-image.jpg') no-repeat center center;
-      padding: 50px;
+      background: url('https://via.placeholder.com/1500x500') no-repeat center center/cover;
+      height: 150px;
       text-align: center;
       color: white;
-    }
-    .product-grid {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
-    .product {
-      border: 1px solid #ddd;
-      margin: 10px;
-      padding: 20px;
-      width: 200px;
+    .banner h1 {
+      font-size: 2.5rem;
+    }
+    .banner p {
+      font-size: 1.2rem;
+    }
+
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: #444;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 10px 0;
+    }
+
+    .navbar a {
+      display: inline-block;
+      padding: 14px 20px;
+      color: white;
+      text-decoration: none;
       text-align: center;
     }
-    .product img {
-      width: 100%;
+
+    .navbar a:hover {
+      background-color: #575757;
+    }
+
+    /* Product Categories */
+    .category {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 15px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+   }
+
+    .category h2 {
+      color: #333;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      max-width: 100%;
       height: auto;
+      border-radius: 8px;
     }
     .product-info {
       margin-top: 10px;
     }
-    .footer {
-      text-align: center;
-      padding: 10px;
+    .product-info h3 {
+      font-size: 1.2rem;
+      color: #004aad;
+    }
+    .product-card p {
+      color: #555;
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+    .price {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #333;
+    }
+    .code {
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    .buy-button {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1.1em;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .buy-button:hover {
+      background-color: #128C7E;
+    }
+ 
+    /* Footer */
+    footer {
       background-color: #333;
       color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-
-  <!-- Navigation Bar -->
-  <div id="navbar" class="navbar"></div>
-
-  <!-- Banner -->
+    <!-- Banner -->
   <div class="banner">
     <h1>Welcome to Campi</h1>
     <p>Your One-Stop Shop for Electrical Appliances</p>
   </div>
 
-  <!-- Main Container for Products -->
-  <div id="product-container" class="container"></div>
-
-  <!-- Footer -->
-  <div class="footer">
-    <p>&copy; 2024 Campi. All Rights Reserved.</p>
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="#tv-audio">Television & Audio</a>
+    <a href="#fridges">Refrigerators & Freezers</a>
+    <a href="#small-appliances">Small Appliances</a>
+    <a href="#home-appliances">Room Appliances</a>
+    <a href="#kitchen-appliances">Kitchen Appliances</a>
+    <a href="#air-conditioners">Air Conditioners</a>
+    <a href="#washing-machines">Washing Machines</a>
   </div>
 
-  <!-- JavaScript -->
+  <!-- Television & Audio Category -->
+  <div class="category" id="television-audio">
+    <h2>Television & Audio</h2>
+    <div class="product-grid">
+      <div class="product-card" id="product-1">
+        <img src=""https://via.placeholder.com/300" alt="LED TV">
+        <div class="product-info">
+        <h3>4K Smart TV</h3>
+        <p>$500.00</p>
+        <p>Item Code: TV001</p>
+      <button class="buy-button" onclick="sendToWhatsApp('Automatic Washing Machine', '$400.00', 'washing-machine1.jpg')">Buy</button>
+      </div>
+      </div>
+      <div class="product-card" id="product-2">
+        <img src="washing-machine1.jpg" alt="Automatic washing machine with quick wash function" class="product-image">
+        <h3>Automatic Washing Machine</h3>
+        <p>$400.00</p>
+        <p>Item Code: WM001</p>
+        <button class="buy-button" onclick="sendToWhatsApp('Automatic Washing Machine', '$400.00', 'washing-machine1.jpg')">Buy</button>
+      </div>
+    </div>
+  </div>
+   
+ 
+
+  <!-- Home Appliances Category -->
+  <div class="category" id="home-appliances">
+    <h2>Home Appliances</h2>
+    <div class="product-grid">
+      <div class="product-card" id="product-3">
+        <img src="fridge1.jpg" alt="Energy-efficient refrigerator with modern design" class="product-image">
+        <h3>Energy-efficient Fridge</h3>
+        <p>$800.00</p>
+        <p>Item Code: FR001</p>
+        <button class="buy-button" onclick="sendToWhatsApp('Energy-efficient Fridge', '$800.00', 'fridge1.jpg')">Buy</button>
+      </div>
+      <div class="product-card" id="product-4">
+        <img src="washing-machine1.jpg" alt="Automatic washing machine with quick wash function" class="product-image">
+        <h3>Automatic Washing Machine</h3>
+        <p>$400.00</p>
+        <p>Item Code: WM001</p>
+        <button class="buy-button" onclick="sendToWhatsApp('Automatic Washing Machine', '$400.00', 'washing-machine1.jpg')">Buy</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Electrical Appliances Catalog</p>
+    <p>Contact us at <a href="mailto:info@yourbrand.com">info@yourbrand.com</a></p>
+  </footer>
+
   <script>
-    // Google Sheets Configuration
-    const sheetId = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQsGcPLYoVe9yc3lHQi3kVOm1v7SCTJ9kiRT3Ujud5fmTM6taDp0RhhbFvjx2iF-xbLWklQn3t-eZ-b/pubhtml"; // Replace with your Google Sheet ID
-    const sheetUrlBase = https://spreadsheets.google.com/feeds/list/${sheetId}/; // Base URL to fetch sheets
+    // Function to send product details to WhatsApp
+    function sendToWhatsApp(productName, productPrice, productImage) {
+      const whatsappNumber = 'YOUR_WHATSAPP_NUMBER'; // Replace with your WhatsApp number
+      const message = *I am interested in buying the following product:*\n\nProduct: ${productName}\nPrice: ${productPrice}\nImage: ${window.location.origin}/${productImage};
+      const url = https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)};
 
-    // Fetch Data from Google Sheets
-    async function fetchProducts() {
-      // Fetch categories (sheet names)
-      const sheetNames = ['Television & Audio', 'Refrigerators & Freezers', 'Small Appliances', 'Home Appliances', 'Kitchen Appliances', 'Air Conditioners', 'Washing Machines']; // Update this with your actual sheet names
-      const allProducts = [];
+      // Open the WhatsApp chat with the product details
+      window.open(url, '_blank');
+    }
 
-      for (let category of sheetNames) {
-        const sheetUrl = ${sheetUrlBase}${category}/public/values?alt=json;
+    // Function to dynamically load products from Google Apps Script
+    async function loadProducts() {
+      try {
+        const response = await fetch('/getProductData'); // Endpoint from Apps Script
+        const products = await response.json();
 
-        const response = await fetch(sheetUrl);
-        const data = await response.json();
+        const productList = document.getElementById('product-list');
+        productList.innerHTML = ''; // Clear any existing content
 
-        // Parse Google Sheets data
-        const products = data.feed.entry.map(entry => ({
-          name: entry.gsx$productname.$t,
-          price: entry.gsx$price.$t,
-          code: entry.gsx$itemcode.$t,
-          image: entry.gsx$imageurl.$t,
-          description: entry.gsx$productdescription.$t,
-          category: category,  // Add category to the product data
-        }));
-
-        allProducts.push(...products);
+        products.forEach(product => {
+          const productCard = `
+            <div class="product-card">
+              <img src="${product.image}" alt="${product.description}" class="product-image">
+              <h3>${product.name}</h3>
+              <p class="price">${product.price}</p>
+              <p class="code">Item Code: ${product.code}</p>
+              <button class="buy-button" onclick="sendToWhatsApp('${product.name}', '${product.price}', '${product.image}')">Buy</button>
+            </div>
+          `;
+          productList.innerHTML += productCard;
+        });
+      } catch (error) {
+        console.error('Error loading products:', error);
       }
-
-      displayProducts(allProducts);
     }
 
-    // Display Products on the Page
-    function displayProducts(products) {
-      const container = document.getElementById("product-container");
-      const categories = [...new Set(products.map(product => product.category))];
-
-      // Create Navbar
-      const navbar = document.getElementById("navbar");
-      categories.forEach(category => {
-        const link = document.createElement("a");
-        link.href = #${category.toLowerCase().replace(/\s+/g, "-")};
-        link.textContent = category;
-        navbar.appendChild(link);
-      });
-
-      // Create Product Sections
-      categories.forEach(category => {
-        const section = document.createElement("div");
-        section.id = category.toLowerCase().replace(/\s+/g, "-");
-        section.classList.add("category");
-
-        const heading = document.createElement("h2");
-        heading.textContent = category;
-        section.appendChild(heading);
-
-        const grid = document.createElement("div");
-        grid.classList.add("product-grid");
-
-        products
-          .filter(product => product.category === category)
-          .forEach(product => {
-            const productCard = document.createElement("div");
-            productCard.classList.add("product");
-
-            productCard.innerHTML = `
-              <img src="${product.image}" alt="${product.name}">
-              <div class="product-info">
-                <h3>${product.name}</h3>
-                <p class="price">${product.price}</p>
-                <p class="code">Item Code: ${product.code}</p>
-                <p class="description">${product.description}</p>
-              </div>
-            `;
-            grid.appendChild(productCard);
-          });
-
-        section.appendChild(grid);
-        container.appendChild(section);
-      });
-    }
-
-    // Initialize
-    fetchProducts();
   </script>
 </body>
 </html>
